@@ -3,7 +3,7 @@ import Item from "../components/Item";
 import styles from "../styles/home.module.css";
 
 const Home = () => {
-    const items = useOutletContext();
+    const { items, cart, setCart } = useOutletContext();
 
     return (
         <div className={styles.home}>
@@ -16,6 +16,8 @@ const Home = () => {
                             price={item.price}
                             imgUrl={item.image}
                             reason="Add to cart"
+                            command={setCart}
+                            cart={cart}
                         />
                     </li>
                 ))}
